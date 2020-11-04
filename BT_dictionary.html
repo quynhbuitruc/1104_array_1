@@ -10,11 +10,25 @@
 <body>
     <input id="inputEnglish" type="text">
     <button id="search"> Tìm kiếm </button>
+    <p id="show"></p>
     <script>
-        document.getElementById("search").addEventListener("onclick", function () {
-            let input = document.getElementById("inputEnglish").value 
-            let fruitsEng = ["Apple","Banana", "Dragon Fruit", "Jackfruit", "Durian"]
+        document.getElementById("search").addEventListener("click", function () {
+            
+            let fruitsEng = ["Apple", "Banana", "Dragon Fruit", "Jackfruit", "Durian"]
             let fruitsVie = ["Táo", "Chuối", "Thanh Long", "Mít", "Sầu Riêng"]
+            
+            let outPut = ""
+            let input = document.getElementById("inputEnglish").value
+            for (let i = 0; i < fruitsEng.length; i++) {
+                if (input == fruitsEng[i]) {
+                    iVn = i
+                    outPut = fruitsVie[iVn]
+                    console.log("Found")
+                    break
+                    // nếu không có dòng này, vòng lặp sẽ tiếp tục chạy cho dù đã tìm thấy được nội dung phù hợp //
+                }
+            }
+
         })
     </script>
 </body>
